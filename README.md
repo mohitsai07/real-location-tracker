@@ -78,9 +78,6 @@ Live Demo: [real-location-tracker.vercel.app](https://real-location-tracker.verc
 
 Pull requests and suggestions welcome! See [issues](https://github.com/mohitsai07/realtime-location-tracker/issues) for ideas and bugs.
 
-## 📝 License
-
-[Specify a license here, e.g. MIT, GPL, etc.]
 
 ## 📚 Credits
 
