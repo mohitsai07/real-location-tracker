@@ -1,0 +1,1 @@
+// placeholder — Socket.IO client will be served by the socket.io server when using CDN; keep empty placeholder

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>🚀 Futuristic Location Tracker - Real-Time Monitoring System</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/public/css/style.css" />
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div id="map"></div>
+    <aside id="panel">
+      <h3>Devices</h3>
+      <ul id="deviceList"></ul>
+      <hr/>
+      
+      <!-- Status & Alerts Panel -->
+      <h4>Status & Alerts</h4>
+      
+      <!-- Quick Status Buttons -->
+      <div id="statusButtons">
+        <button class="status-btn safe" data-status="safe">✅ Safe</button>
+        <button class="status-btn help" data-status="help">🆘 Help</button>
+        <button class="status-btn delayed" data-status="delayed">⏰ Delayed</button>
+        <button class="status-btn arrived" data-status="arrived">🏁 Arrived</button>
+      </div>
+      
+      <!-- Device Health -->
+      <div id="deviceHealth">
+        <h5>Device Health</h5>
+        <div id="healthInfo">
+          <div class="health-item">
+            <span class="label">Battery:</span>
+            <span id="batteryLevel">--</span>
+          </div>
+          <div class="health-item">
+            <span class="label">Signal:</span>
+            <span id="signalStrength">--</span>
+          </div>
+          <div class="health-item">
+            <span class="label">Last Update:</span>
+            <span id="lastUpdate">--</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Alerts & Notifications -->
+      <div id="alertsPanel">
+        <h5>Alerts</h5>
+        <div id="alertsList"></div>
+      </div>
+      
+      <!-- Activity Log -->
+      <div id="activityLog">
+        <h5>Recent Activity</h5>
+        <div id="activityList"></div>
+      </div>
+      
+      <!-- Share Location -->
+      <div id="shareLocation">
+        <button id="shareBtn">📍 Share My Location</button>
+        <div id="shareStatus"></div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    // Small client bootstrap: load socket.io script from server-provided file
+  </script>
+  <script src="/public/js/main.js"></script>
+</body>
+</html>

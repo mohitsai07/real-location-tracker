@@ -1,0 +1,98 @@
+/* Futuristic Real-Time Location Tracker Styles - Enhanced Visibility */
+*{box-sizing:border-box}
+html,body,#app{height:100vh;margin:0;padding:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#0c0c0c 0%,#1a1a2e 50%,#16213e 100%);overflow:hidden}
+
+/* Animated background */
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 20% 50%,rgba(120,119,198,0.3) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(255,119,198,0.3) 0%,transparent 50%),radial-gradient(circle at 40% 80%,rgba(120,219,255,0.3) 0%,transparent 50%);animation:backgroundShift 20s ease-in-out infinite;z-index:-1}
+@keyframes backgroundShift{0%,100%{opacity:1}50%{opacity:0.8}}
+
+/* Map styling */
+#map{position:fixed;left:0;top:0;right:380px;bottom:0;width:calc(100% - 380px);height:100vh;border:none;filter:brightness(0.9) contrast(1.1)}
+
+/* Futuristic panel - Wider for better text visibility */
+#panel{position:fixed;right:0;top:0;width:380px;height:100vh;background:rgba(15,15,35,0.95);backdrop-filter:blur(20px);border-left:3px solid rgba(0,255,255,0.5);padding:0;overflow-y:auto;box-shadow:-15px 0 40px rgba(0,0,0,0.6)}
+
+/* Scrollbar styling */
+#panel::-webkit-scrollbar{width:8px}
+#panel::-webkit-scrollbar-track{background:rgba(255,255,255,0.1)}
+#panel::-webkit-scrollbar-thumb{background:linear-gradient(45deg,#00ffff,#ff00ff);border-radius:4px}
+#panel::-webkit-scrollbar-thumb:hover{background:linear-gradient(45deg,#ff00ff,#00ffff)}
+
+/* Headers - Balanced and minimalistic */
+h3,h4,h5{color:#4a9eff;text-shadow:0 0 8px rgba(74,158,255,0.4);margin:0;padding:18px 25px 12px;font-weight:600;letter-spacing:1px;border-bottom:1px solid rgba(74,158,255,0.3);text-transform:uppercase;background:rgba(74,158,255,0.05)}
+h3{font-size:20px;background:linear-gradient(90deg,rgba(74,158,255,0.1),transparent);font-weight:700;text-shadow:0 0 10px rgba(74,158,255,0.5)}
+h4{font-size:18px;padding:16px 25px 10px;color:#e8f4fd;text-shadow:0 0 8px rgba(232,244,253,0.3);background:rgba(255,255,255,0.02)}
+h5{font-size:16px;padding:14px 25px 8px;color:#ff8a80;text-shadow:0 0 8px rgba(255,138,128,0.4);background:rgba(255,138,128,0.05)}
+
+/* Device list - Balanced and minimalistic */
+#deviceList{list-style:none;padding:0;margin:0;max-height:150px;overflow-y:auto}
+#deviceList li{padding:16px 25px;border-bottom:1px solid rgba(255,255,255,0.1);cursor:pointer;color:#e8f4fd;transition:all 0.3s ease;position:relative;font-size:14px;font-weight:500;text-shadow:0 0 5px rgba(232,244,253,0.3);background:rgba(255,255,255,0.02)}
+#deviceList li:hover{background:rgba(74,158,255,0.1);color:#4a9eff;transform:translateX(5px);text-shadow:0 0 8px rgba(74,158,255,0.5);box-shadow:0 2px 10px rgba(74,158,255,0.2)}
+#deviceList li::before{content:'📱';margin-right:10px;opacity:0.8;font-size:16px}
+
+/* Status buttons - Balanced and minimalistic */
+#statusButtons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 25px;padding:0}
+.status-btn{padding:16px 12px;border:none;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;transition:all 0.3s ease;position:relative;overflow:hidden;text-transform:uppercase;letter-spacing:1px;min-height:50px;display:flex;align-items:center;justify-content:center;text-shadow:0 0 5px rgba(0,0,0,0.3);border:1px solid transparent}
+.status-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left 0.5s}
+.status-btn:hover::before{left:100%}
+.status-btn.safe{background:linear-gradient(135deg,#66bb6a,#4caf50);color:#fff;box-shadow:0 4px 12px rgba(102,187,106,0.3);border-color:rgba(102,187,106,0.4)}
+.status-btn.help{background:linear-gradient(135deg,#ef5350,#f44336);color:#fff;box-shadow:0 4px 12px rgba(239,83,80,0.3);border-color:rgba(239,83,80,0.4)}
+.status-btn.delayed{background:linear-gradient(135deg,#ffb74d,#ff9800);color:#fff;box-shadow:0 4px 12px rgba(255,183,77,0.3);border-color:rgba(255,183,77,0.4)}
+.status-btn.arrived{background:linear-gradient(135deg,#5c6bc0,#3f51b5);color:#fff;box-shadow:0 4px 12px rgba(92,107,192,0.3);border-color:rgba(92,107,192,0.4)}
+.status-btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 6px 16px rgba(0,0,0,0.2)}
+.status-btn.active{opacity:0.9;transform:scale(0.98);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(74,158,255,0.4)}50%{box-shadow:0 0 0 8px rgba(74,158,255,0)}}
+
+/* Device Health - Balanced and minimalistic */
+#deviceHealth{margin:15px 25px;padding:16px;background:rgba(74,158,255,0.05);border-radius:8px;border:1px solid rgba(74,158,255,0.2);position:relative;overflow:hidden}
+#deviceHealth::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,#4a9eff,#66bb6a,#4a9eff);animation:scan 4s linear infinite}
+@keyframes scan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+#deviceHealth h5{margin:0 0 12px 0;color:#4a9eff;font-size:16px;text-transform:uppercase;letter-spacing:1px}
+#healthInfo{display:flex;flex-direction:column;gap:8px}
+.health-item{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.1);align-items:center}
+.health-item:last-child{border-bottom:none}
+.health-item .label{color:#b0bec5;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;font-size:12px}
+.health-item span:last-child{color:#4a9eff;font-weight:600;text-shadow:0 0 5px rgba(74,158,255,0.4);font-size:13px}
+
+/* Alerts Panel - Balanced and minimalistic */
+#alertsPanel{margin:15px 25px;padding:16px;background:rgba(255,138,128,0.05);border-radius:8px;border:1px solid rgba(255,138,128,0.2);position:relative}
+#alertsPanel h5{margin:0 0 12px 0;color:#ff8a80;font-size:16px;text-transform:uppercase;letter-spacing:1px}
+#alertsList{max-height:120px;overflow-y:auto}
+.alert-item{padding:8px;margin-bottom:6px;background:rgba(255,255,255,0.03);border-radius:6px;border-left:2px solid #ff8a80;font-size:12px;color:#e8f4fd;position:relative;animation:slideIn 0.3s ease;font-weight:500;text-shadow:0 0 3px rgba(232,244,253,0.3)}
+@keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+
+/* Activity Log - Balanced and minimalistic */
+#activityLog{margin:15px 25px;padding:16px;background:rgba(74,158,255,0.05);border-radius:8px;border:1px solid rgba(74,158,255,0.2);position:relative}
+#activityLog h5{margin:0 0 12px 0;color:#4a9eff;font-size:16px;text-transform:uppercase;letter-spacing:1px}
+#activityList{max-height:140px;overflow-y:auto}
+.activity-item{padding:6px;margin-bottom:4px;background:rgba(255,255,255,0.02);border-radius:4px;font-size:11px;color:#b0bec5;border-left:2px solid #4a9eff;position:relative;animation:fadeIn 0.5s ease;font-weight:400;text-shadow:0 0 3px rgba(176,190,197,0.3)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.activity-item::before{content:'▶';color:#4a9eff;margin-right:6px;font-size:8px;font-weight:bold}
+
+/* Share Location - Balanced and minimalistic */
+#shareLocation{margin:15px 25px 25px;padding:16px;background:rgba(102,187,106,0.05);border-radius:8px;border:1px solid rgba(102,187,106,0.2);position:relative}
+#shareBtn{width:100%;padding:12px;background:linear-gradient(135deg,#66bb6a,#4caf50);color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:all 0.3s ease;position:relative;overflow:hidden;text-shadow:0 0 3px rgba(0,0,0,0.3);border:1px solid rgba(102,187,106,0.3)}
+#shareBtn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left 0.5s}
+#shareBtn:hover::before{left:100%}
+#shareBtn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(102,187,106,0.3)}
+#shareStatus{margin-top:8px;font-size:11px;color:#66bb6a;text-align:center;font-weight:500;text-shadow:0 0 3px rgba(102,187,106,0.4)}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #panel{width:350px}
+  #map{right:350px;width:calc(100% - 350px)}
+  #statusButtons{grid-template-columns:1fr;margin:20px 25px}
+  h3,h4,h5{padding-left:25px;padding-right:25px;font-size:20px}
+  #deviceHealth,#alertsPanel,#activityLog,#shareLocation{margin-left:25px;margin-right:25px}
+  .status-btn{font-size:16px;padding:20px 12px;min-height:70px}
+}
+
+/* Loading animation */
+.loading{display:inline-block;width:25px;height:25px;border:4px solid rgba(0,255,255,0.3);border-radius:50%;border-top-color:#00ffff;animation:spin 1s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Glow effects */
+.glow{box-shadow:0 0 30px rgba(0,255,255,0.8) !important}
+
+/* Enhanced text visibility */
+*{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
